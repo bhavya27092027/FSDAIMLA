@@ -9,11 +9,11 @@ const users = [
 app.use(express.json())
 app.get("/users/:id", (req, res) => {
     try {
-        const uid = parseInt(req.params.id, 10);
-        const user = users.find(u => u.id === uid);
+        const id = parseInt(req.params.id, 10);
+        const user = users.find(u => u.id === id);
 
         if (!user) {
-            return res.status(404).json({ message: `user id ${uid} not found` });
+            return res.status(404).json({ message: `user id ${id} not found` });
         }
 
         return res.status(200).json(user);
@@ -44,7 +44,7 @@ app.post("/create", (req, res) => {
 
         // user.id=users.length+1;
         // users.push(user);
-        //res.status(201).json({message:"user created successfully",user:user});
+        // res.status(201).json({message:"user created successfully",user:user});
     }
     catch (err) {
         const message = err.message;

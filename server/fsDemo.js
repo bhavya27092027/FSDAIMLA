@@ -17,9 +17,9 @@ console.log("Data Appended Successfully");
 
 // Deleting the file
 fs.unlinkSync("data.txt");
-console.log("Data file deletd successfully") */ 
+console.log("Data file deletd successfully") */
 
-/* fs.renameSync("data.txt", "newdata.txt") */ 
+/* fs.renameSync("data.txt", "newdata.txt") */
 
 
 
@@ -49,12 +49,12 @@ fs.writeFile("newData.txt", myData,(err)=>{
 
 import fs from "fs/promises"
 
-async function readData(){
-    try{
-        const data = await fs.readFile("newdata.txt","utf-8");
+async function readData() {
+    try {
+        const data = await fs.readFile("newdata.txt", "utf-8");
         console.log("Data = ", data)
     }
-    catch(err) {
+    catch (err) {
         console.log("Error:", err.message);
     }
 }
@@ -65,10 +65,10 @@ async function writeData(myData) {
     try {
         await fs.writeFile("newData.txt", myData);
         console.log("Data Written Successfully")
-    } catch(err) {
+    } catch (err) {
         console.error("Error", err.message);
     }
-    
+
 }
 
 writeData("My FSD Data Function");
